@@ -1,32 +1,26 @@
-# Section 3: Back together: show & ask
+# Section 3 — Reconvene: show & ask
 
-> **Time: ~15 min. All together.** Pull both rooms back. The point is to see that the *same loop* produced two different useful things, and to clear whatever got fuzzy. This is protected time, don't let the breakout eat it.
+> **~15 min. All together.** Pull both rooms back. See that the same flow produced buildable design + tasks, and clear whatever got fuzzy.
 
-## Show two results (6 min)
+## Show two results (5 min)
 
-One Product, one QA. ~90 seconds each, screen shared. Ask the person to answer just one of these:
+One per room, ~90 seconds each, screen shared:
+- **What did your spec become** — show the `design.md` and `tasks.md`.
+- **Where did you split?** What was the behavior seam that told you a spec was too big?
+- **Would you build from this?** Does every task trace to a decision?
 
-- **What did your feature look like before, and what's the ticket tree now?** (Product: show the Epic + Stories.)
-- **Where did `grill me` change your mind**: what did it catch that you'd have shipped?
-- **Did every Story end up with real business value?** Where did you almost split by layer?
-- **How did the confirm-before-create feel?**
+## Open Q&A (8 min)
 
-Keep it concrete. "Here's the fuzzy feature, here are the tickets" beats any explanation.
+Likely ones:
+- **"How big should one spec be?"** One behavior a user can observe; if a spec needs >6–8 WHEN/THEN, split it.
+- **"Where does Product stop and I start?"** Product owns proposal + spec going forward; you own spec → design + tasks → build. Today you learned the whole thing so you can review their spec.
+- **"Full-stack or split by layer?"** Full-stack by behavior. Never a frontend/backend or by-page-area split — a layer has no standalone value.
+- **"What if the spec is wrong?"** Tell Product; the spec is a decision record, fixed *before* you build, not patched after.
 
-## Open Q&A (5 min)
-
-Anything from the session. Likely ones, with the short answer:
-
-- **"When do I trust it to create tickets?"**: When you've read the tree and you'd have drawn something close to it yourself. The review *is* the safety, and a wrong ticket is one click to delete.
-- **"How small should a Story be?"**: One behavior a user can observe; one sentence to describe; if a spec needs >6-8 scenarios, split it.
-- **"What if I don't have a good example of what good looks like?"**: QA has the four reference test cases linked in the breakout; Product has the worked example in the process doc.
-- **"Is this just for features?"**: No. Same loop works for a single story, a test plan, a release note. A feature is just today's rep.
-- **"CLAUDE.md vs. a skill, which?"**: A `CLAUDE.md` is a preference Claude always loads in that folder. A skill is the packaged, one-command version you can reuse anywhere. Start with the preference; graduate to the skill.
-
-> **If the room is quiet:** ask *"what almost stopped you?"*, the friction answers are the most useful for next week.
+> **If it's quiet:** *"What almost stopped you?"* — friction answers shape next week.
 
 ## Bridge
 
-> "You just did, with a teammate, the exact thing you do every sprint, only the vague version didn't survive. Next week we build on this." 
+> "You just turned a spec into something you could build — incrementally, one behavior at a time. That's the back half of the pipeline; Product owns the front. Next week we connect them end to end."
 
 Go to the [Closing](closing.md).

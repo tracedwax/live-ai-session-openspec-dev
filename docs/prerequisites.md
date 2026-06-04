@@ -1,69 +1,29 @@
 # Prerequisites
 
-Two things make this session work. The first is required. The second is what turns "I watched a demo" into "I worked my own feature."
+Two required things, and a few that make the hour real.
 
-## Required: Claude Code working in VS Code
+## Required: Claude Code in VS Code (on Opus)
 
-You need Claude Code running in the VS Code sidebar and able to answer you.
+Install **VS Code**, add the **Claude Code extension**, sign in, and set the model to **Opus**. Ask it *"tell me a joke"* — if you get one back, you're ready.
 
-1. Install **VS Code**, add the **Claude Code extension**, and **sign in**. (The drop-in coaching this week walks through this if you're not there yet.)
-2. Open the Claude panel and ask:
+## Required: a story to bring
 
-   > *"Tell me a joke."*
+Bring **one real story** you'd actually pick up. Rough is fine — unrefined is the point; that's what OpenSpec sharpens. Bring whatever you have about it too (notes, a Slack thread, a screenshot).
 
-If you get a joke back, you're ready. That's the whole bar.
+## Connect Jira (the MCP) — once, globally
 
-## Required for the real win: bring one feature
+> *"Set up the Atlassian MCP globally: run `claude mcp add --transport http --scope user atlassian https://mcp.atlassian.com/v1/mcp`, then walk me through the `/mcp` browser login."*
 
-- **Product:** bring **one real feature**: something big enough to break into a few pieces. Not a single tidy ticket; a chunk of work you'd need to split into stories ("guest checkout," "bulk export," "the new onboarding"). Vague and rough is good, that's the point.
-- **QA:** bring **one story** with acceptance criteria you'd need to turn into test cases.
+**Restart Claude Code after connecting** so the tools load; confirm `claude mcp list` shows `atlassian … ✓ Connected`. Any live writes go to the **Mocking Project (`MP`)** sandbox, not a real backlog.
 
-Bring whatever you have *about* it, too: the requirements you were handed, a Slack thread, your own notes, even a **recording or transcript** of a conversation about it. **Got a Figma frame or a Claude prototype?** A screenshot is enough, drag it into the chat. Messy is fine. We feed all of it to Claude.
+## OpenSpec
 
-## Connect Jira (we'll confirm in the room)
+The flow uses `/opsx:propose` (and `/opsx:apply`). If your repo doesn't have it:
+- Run `openspec init` in your repo (`npm i -g @fission-ai/openspec` first if needed), **or**
+- Tell Claude: *"Look up what OpenSpec's opsx propose does and run that workflow yourself."*
 
-You'll **create real tickets in your own Jira project** live, so your Jira connection (the "MCP") needs to be on. Nothing gets created until you read the whole ticket tree and say go, and a wrong ticket is one click to delete. *(If you'd rather not touch your real backlog, there's a shared sandbox, the **[Mocking Project (`MP`)](https://aspenware.atlassian.net/jira/software/projects/MP/boards)**: where you can create throwaway tickets safely.)*
+## A repo to work in
 
-- If a drop-in already connected your Jira, you're set.
-- If not, **come to a drop-in before June 2** or flag it in the channel. A facilitator can also drive the demo on their own Jira so you still see the whole loop.
+Open Claude in a repo you can write to — your own working repo is fine. OpenSpec writes `openspec/changes/<change>/` files here (proposal, specs, design, tasks). You write **no application code** today unless you reach the build stretch.
 
-> **Jira is configured once, globally.** You don't reconfigure it per project. If you already set it up in another repo, ask Claude to **move the MCP config to your global setup** so it works in every folder. Starting fresh? Just ask Claude to walk you through MCP setup and follow its instructions.
-
-> **Writing to Jira is always confirm-first:** Claude shows you the whole ticket tree **as a plan**, then you say go. Nothing gets created until you approve it.
-
-## Get your workspace
-
-**Product, open Claude in your own folder.** Use the repo you already work in, **you're not creating a new one.** It's just a home for the work and an autosave trail. You write **no application code**: only the proposal, the specs, and the tickets.
-
-- Add two things to that folder: **OpenSpec** (`npm i -g @fission-ai/openspec`, or ask Claude to install it) and the **process doc**, [`openspec-process.md`](openspec-process.md). The process doc is a page on this site, copy it into your folder, or just ask Claude to add it. Don't fuss over this beforehand; Claude does it in [Step 0](section-2-breakout.md) of the breakout.
-
-> **About git:** the session uses tiny git commits as **autosave**: Claude makes them automatically after each step. *You don't need to know any git.* It's just an undo trail.
-
-**QA, you already have `qa-shared-tools`** (Azure DevOps) cloned, that's your workspace. Open it in VS Code and **make a branch for the session** (`git checkout -b qa-training/<your-name>`, or just ask Claude to make the branch) so nothing touches `main`. Your bar is the team's **[Test Case Standard](https://aspenware.atlassian.net/wiki/spaces/QA/pages/4137582614/Test+Case+Standard)** (in Confluence); the `QUAL-4510` example and a starter `write-test-cases` skill come from the session materials.
-
-<details>
-<summary>Need to clone it fresh? Click here</summary>
-
-```
-git clone "git@ssh.dev.azure.com:v3/awdenver/Aspenware Commerce/qa-shared-tools"
-```
-SSH (HTTPS is painful). New to SSH on Azure DevOps? Ask Claude to walk you through adding a key.
-</details>
-
-## If your requirements live in SharePoint
-
-Some of you keep requirements in **SharePoint**. If that connection is set up by June 2 we'll use it; if not, just **paste the text in**. Don't block on it.
-
-## Troubleshooting
-
-| Problem | Fix |
-|---------|-----|
-| Claude panel not showing in VS Code | Reinstall the extension; bring it to a drop-in if it persists |
-| Not signed in / auth loop | Flag in the channel, the coordinator handles licensing |
-| Jira not connected | Come to a drop-in; worst case, follow on a facilitator's Jira |
-| OpenSpec not installed (Product) | Ask Claude to install it (`npm i -g @fission-ai/openspec`), or come to a drop-in |
-| Not sure which folder to use (Product) | Use whatever folder you already work in, no need to make a new one |
-| `qa-shared-tools` not cloned (QA) | You should already have it; if not, use the SSH clone under "Get your workspace" or ask Claude. Worst case, paste the story + standard and work locally |
-| No feature to bring | Tell your facilitator, we have [example tickets](example-tickets.md) you can break up instead |
-
-> **Stuck?** Post in the channel before the session. We'd rather fix setup now than spend live minutes on it.
+> **Stuck on setup?** Post in the channel before the session — we'd rather fix it now than spend live minutes on it.

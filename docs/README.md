@@ -1,60 +1,36 @@
-# Specs & Test Cases with Claude: Product & QA
+# OpenSpec for Devs — Spec → Design → Tasks
 
-Welcome. This is a hands-on session. You bring one real **feature** you actually need to work; you leave with it broken into **Jira tickets a developer can build from** (Product splits the feature into value-bearing tickets, QA writes the test cases), plus a saved way of doing it again that works *the way you work*.
+Welcome. This is the **developer** session. It picks up where the Product session left off: Product hands you a **spec**, and you turn it into what you build from — a **design** and a **task list** — one small, full-stack increment at a time.
 
-> **Tooling:** We work in **Claude Code inside VS Code**, the same sidebar you've been setting up in the drop-ins. No terminal required.
+> **Tooling:** Claude Code in **VS Code**, with the **Jira MCP** and **OpenSpec** (`/opsx:*`). Model: **Opus**.
 
-> **Heads-up, it's hands-on:** we'll ask everyone to **follow along and share their screen** while they work. Come ready to do the work live, not just watch. Full [rules of engagement](section-1-orient.md) are at the start of the session.
+## The handoff (say this out loud)
 
-## What this session is
+Tuesday, Product learned to take a story and produce a **proposal** and **specs**. **Going forward, that's Product's job** — proposal and spec come *to* you. Today you learn the **whole** pipeline so you can read and trust what Product hands you, but **your job starts at the spec**:
 
-One job, done well: **take a feature you own and, with Claude, break it into clean tickets, live.** Product explores the whole feature, splits it by behavior, and creates an **Epic + a Story per behavior + sub-tasks**: each Story backed by an OpenSpec proposal and spec, each delivering real business value. QA turns a story's acceptance criteria into **test cases**.
+> **In: an OpenSpec spec. Out: a design and tasks** a developer (or the agent) can build from.
 
-This is not a slides session, and it's not about learning a tool for its own sake. It's your normal work, thinking a feature through, splitting it, writing test cases, done with a teammate that reads instantly and forgets nothing.
+## The flow
 
-## The win you leave with
+1. **Bring a story** (pull it from Jira).
+2. **Story → proposal** (`/opsx:propose`).
+3. **Proposal → specs** — one spec per capability. *If a spec is too large, split it into smaller specs first.*
+4. **Spec → design + tasks** — the engineering artifacts. **This is your half.**
+5. *(stretch)* **Tasks → build** with `/opsx:apply`.
 
-By the time we close, you have:
-
-1. **A real feature, turned into buildable tickets**: 
-   - **Product:** a **ticket tree in your own Jira project**: an Epic, a Story per behavior (each with its business-value "Why"), sub-tasks underneath, backed by a reviewed OpenSpec proposal + specs.
-   - **QA:** test cases to the team standard (drafted or cleaned up) saved to `qa-shared-tools`, plus a shared `write-test-cases` skill committed back so the team drafts to the same bar.
-2. **A captured preference**: the one thing you kept insisting on, written into a `CLAUDE.md` so Claude does it that way next time without being told.
-3. *(Stretch)* **Your own skill**: a saved, one-command way to do it again the way you like it.
-
-If you only get #1, that's the session well spent.
-
-## Who's in the room
-
-| Room | You produce | Best fit |
-|------|-------------|----------|
-| **Product** | A **value-bearing ticket tree**: Epic + Stories + sub-tasks, from a real feature (Explore → split → Propose → tickets) | PM / UX |
-| **QA** | Test cases to the team standard + a shared skill, in `qa-shared-tools` | QA |
-
-We start together, split into the two rooms for the build, and come back together to compare and ask anything.
-
-## The North Star
-
-This session is one step toward where this whole engagement is going:
-
-- **Mindset**: treat Claude as a teammate: know its limits, its costs, its strengths.
-- **Workflow**: a Jira-integrated way of working that runs end to end.
-- **Safety**: a clear sense of what's safe to push and what needs your eyes first.
-- **Cadence**: a repeatable routine you actually keep using after we leave.
+Two rules we hold all session:
+- **Incremental.** One spec, one increment at a time. If the agent bites off too much it goes off the rails — keep chunks small.
+- **Full-stack by behavior, never by page area.** A spec is a behavior a user can observe end to end (`guest-checkout`), **not** "the header" or "the payment panel."
 
 ## How the session runs
 
 | | |
 |---|---|
-| **Section 1, Orient** | All together. Level-set, a quick demo of the whole loop, connect Jira. |
-| **Section 2, Breakout** | Two rooms. You do the work on your own feature. |
-| **Section 3, Q&A** | All together. Show one result, ask anything. |
+| **Section 1 — Orient** | All together. Level-set, then **Mike runs the whole flow once**. |
+| **Section 2 — Breakout** | **Two rooms.** You run it on your own story: spec → design + tasks. |
+| **Section 3 — Reconvene** | All together. Show one result, ask anything. |
 | **Closing** | Quick retro + rate the session. |
-
-Facilitators: see the [Run of Show](workshop-flow.md) and [Facilitator Guide](facilitator-guide.md).
 
 ## Before you arrive
 
-Do the [Prerequisites](prerequisites.md). One thing is required, Claude working in VS Code, and one thing makes the session real: **bring a feature you actually need to work.**
-
-**Product:** open Claude in **your own folder** (no new repo) with **OpenSpec** installed and [`openspec-process.md`](openspec-process.md) added. **QA:** you'll work in your team's shared **`qa-shared-tools`** repo (Azure DevOps), where the standard and example live. The [Prerequisites](prerequisites.md) page has the details.
+Do the [Prerequisites](prerequisites.md): Claude in VS Code, **Jira MCP (global)**, **OpenSpec**, a repo to work in, and **one real story**. The method is in **[The OpenSpec Process](openspec-process.md)** — keep it open.
