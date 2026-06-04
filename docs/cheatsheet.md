@@ -9,7 +9,7 @@ One screen. Keep it open while you build.
 2. **`/opsx:propose`** → proposal + specs (+ design + tasks).
 3. **Review proposal + specs.** Split any spec with **>6–8 WHEN/THEN** into smaller specs.
 4. **Take ONE spec** → review/generate its **`design.md`** + **`tasks.md`**.
-5. *(stretch)* **`/opsx:apply`** → build the first task or two.
+5. *(stretch)* **`/opsx:apply`** → build **one task at a time, TDD**: test → fail → code → pass → commit.
 
 ## Commands
 | Command | Does |
@@ -26,7 +26,8 @@ One screen. Keep it open while you build.
 - **Behavior, not page area.** A spec is a full-stack behavior a user can observe — never "frontend / backend / header."
 - **Small chunks.** 1–2 capabilities per change. Big story? Split *before* design + tasks.
 - **Don't one-shot.** One artifact → read → fix → next. Tell it to slow down if it races.
-- **Every task traces to a spec decision.** If it doesn't, the spec is incomplete.
+- **Every task traces to a spec decision.** If it doesn't, the spec is incomplete. Ambiguity dies in planning, not the build.
+- **Build TDD.** One task at a time: test → fail → code → pass → commit.
 - **Confirm before any Jira write.** Sandbox = **Mocking Project (`MP`)**.
 
 ## The handoff

@@ -36,7 +36,10 @@ Read them as the person who'll build it:
 > **Want it one artifact at a time?** Turn on OpenSpec's expanded workflow once — `openspec config profile` (choose *expanded*), then `openspec update` — and use `/opsx:continue` to generate the **next** artifact (proposal → spec → design → tasks), stopping to review each. That's the most incremental path.
 
 ### Step 5 — *(stretch)* start building
-> *"`/opsx:apply` and work the first task or two. Show me the diff before anything lands."*
+Build **one task at a time, TDD** — the discipline that keeps the agent honest:
+> *"`/opsx:apply`. Work the tasks one at a time, in order: for each, write the test first, run it and watch it fail, write the code, run it and watch it pass, then commit. Show me the diff before anything lands."*
+
+Each task already traces to a spec decision, so the agent **executes the plan instead of guessing.** If a task is too vague to test, the spec or design is incomplete — fix that first. Ambiguity dies in planning, not in the build.
 
 ## Done when
 
