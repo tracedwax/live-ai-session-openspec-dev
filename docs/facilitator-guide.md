@@ -1,36 +1,25 @@
-# Facilitator Guide (Dev session)
+# Facilitator Guide
 
-> For the people running the room. This is a **dev-only** session — **no Product track, no QA track.** The "two rooms" are just devs split for size; both rooms run the **same** exercise.
+For the people running the room. This is a developer session, with no product or QA track. The two rooms are developers split for size, and both run the same exercise.
 
-## Cross-cutting
+## Across the session
 
-- **Mike demos the whole flow once, then get out of the way.** The learning is them doing it.
-- **Protect the one win:** every dev leaves with **one spec turned into a reviewed `design.md` + `tasks.md`** for one full-stack increment. **No code today** — no `/opsx:apply`, no `/opsx:ff`.
-- **Today's commands:** `/opsx:explore` → `/opsx:new` → `/opsx:continue` (one artifact at a time). *Go-forward is `/opsx:propose`* — say so, but don't use it today.
-- **Keep proposal + spec faithful to Jira.** The requirements are Product's; if `/opsx:continue` embellishes, have them tell it *"match the ticket, don't add scope."* The dev's value-add is design + tasks.
-- **Incremental, behavior, small chunks.** One spec at a time; if a spec has >6–8 WHEN/THEN, split it *before* design/tasks. Full-stack by behavior — never frontend/backend/page-area.
-- **Confirm-before-write:** nothing hits Jira until the dev says go; writes go to the **Mocking Project (`MP`)** sandbox.
+One person demonstrates the whole flow once, then gets out of the way; the learning is in doing it. Protect the one result: every developer leaves with one spec turned into a reviewed design and task list. There is no code today, so no `/opsx:apply`. The commands are explore, then new and continue or propose, whichever the repo has. Keep the proposal and spec faithful to Jira; if the agent adds scope, have them tell it to match the ticket. The developer's value is the design and tasks. Keep changes small, and split a spec that is too big before generating design and tasks; split by behavior, never by layer or area of the page. Nothing is written to Jira until the developer approves it, and writes go to the Mocking Project sandbox.
 
-## Two-room coordination
+## Two rooms
 
-- Both rooms are dev rooms running the same steps from [Section 2](section-2-breakout.md). Mike runs one; a second facilitator runs the other.
-- Agree a rejoin time before splitting; each room nominates one person to show in [Section 3](section-3-qa.md).
-- Solo? Collapse to one room — the page supports it.
+Both rooms run the same steps from Section 2, with one facilitator each. Agree a time to rejoin before splitting, and each room picks one person to show a result. With only one facilitator, collapse to a single room.
 
-## Per-section
+## By section
 
-**Section 1 — Orient.** *Cue it's landing:* someone reacts when a spec becomes a concrete `design.md` + `tasks.md`. *Risk:* the demo runs long — if it bleeds, cut to **one** spec → design + tasks; don't skip the split-if-too-big moment. *Risk:* an `/opsx:*` command is missing (e.g. `openspec update` didn't refresh `.claude/commands/opsx/`) — **create the command file by hand** at `.claude/commands/opsx/<name>.md` (or ask Claude to), or re-run `openspec update` and **restart Claude Code**; worst case, "ask Claude to look up the OpenSpec workflow and run it itself."
+Section 1, orient. It is landing when someone reacts to a spec becoming a concrete design and task list. If the demo runs long, cut to one spec through design and tasks, but do not skip the moment where you split a spec that is too big. If a command is missing, create the file by hand under `.claude/commands/opsx/`, or re-run `openspec update` and restart, or ask Claude to run the workflow itself.
 
-**Section 2 — Breakout.** *Cue:* people stop reading the prompt page and start typing their own. *Risk:* the agent bites off the whole feature → remind them: one capability, split it. *Risk:* a spec balloons → send them back to split first. *Risk:* `/opsx:continue` rewrites the requirements → "match the Jira ticket, don't add scope." *Risk:* "design looks fine, ship it" → ask *"does every task trace to a spec decision?"*
+Section 2, breakout. It is landing when people stop reading the page and start typing their own prompts. If the agent takes on the whole feature, remind them: one capability, and split it. If a spec balloons, send them back to split first. If the agent rewrites the requirements, have them say match the Jira ticket. If someone says the design looks fine, ask whether every task traces to a spec decision.
 
-**Section 3 — Reconvene.** Keep it on *"what did your spec become, and where did you split?"* not tool praise.
+Section 3, reconvene. Keep it on what the spec became and where they split, not on praise for the tool.
 
-**Closing.** The Return-on-Time kata is non-negotiable — even 60 seconds.
+Closing. The rating is quick, but do not skip it; it shapes the next session.
 
 ## Dry-run checklist
 
-- [ ] Demo: **`/opsx:explore` → `/opsx:new` → `/opsx:continue`** (proposal → spec → design → tasks), end to end once
-- [ ] One dev runs it live, including the split judgment, keeping proposal+spec faithful to Jira
-- [ ] Jira MCP connected on a non-facilitator machine (restart after connecting)
-- [ ] A missing `/opsx:*` command recovered via the by-hand file (or `openspec update` + restart)
-- [ ] Cut line known: at 0:50, stop at **a reviewed design + tasks**; no `apply`/`ff`
+Run the demo end to end once: explore, generate the proposal and spec, then the design and tasks, keeping it faithful to Jira and stopping before the build. Have one developer run it live, including splitting a spec. Confirm the Jira MCP works on a machine that is not the facilitator's, after a restart. Recover a missing command by writing the file by hand or re-running openspec update. Know the cut line: by 0:50, stop at a reviewed design and tasks, and do not build.

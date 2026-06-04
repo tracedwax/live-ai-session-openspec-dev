@@ -1,50 +1,39 @@
-# Section 2 — Breakout: run it on your own story
+# Section 2: Breakout
 
-> **~35 min. Two rooms** (dev rooms, split for size). **In: a spec. Out: design + tasks** — one small, full-stack increment. **No code today.** Hands on keys, screens shared.
+About 35 minutes, in two rooms (developer rooms, split for size). In comes a spec; out come a design and tasks, one small full-stack increment. No code today. Work on your own story, hands on keys, screens shared.
 
-**Each step says what to accomplish, not what to type** — talking to the agent in your own words *is* the skill. Stuck for words? Open the example prompt. Examples are a safety net, not the path.
+Each step says what to accomplish, not exactly what to type. Talking to the agent in your own words is the skill. If you are stuck for words, open the example prompt; the examples are a fallback, not the path.
 
-> **Don't one-shot it.** Make one artifact, read it, fix it, then the next. If the agent races ahead, tell it to slow down.
+Do not one-shot it. Make one artifact, read it, fix it, then the next. If the agent races ahead, tell it to slow down.
 
-> **Today's commands.** This repo ships the older OpenSpec set, so we use **`/opsx:explore` → `/opsx:new` → `/opsx:continue`**, one artifact at a time, and **stop before building** — no `/opsx:ff` (fast-forwards everything), no `/opsx:apply` (writes code). *(Go-forward, the simplified one-shot is `/opsx:propose`.)*
+## Step 0: Open the repo
 
-### Step 0 — Open the repo
-Open Claude in the repo we're working in today (it already has OpenSpec and existing specs), on **Opus**. Ask Claude to **autosave** — a tiny git commit after each step (your undo trail; you never touch git).
+Open Claude in the repo we are working in today, which already has OpenSpec and existing specs, on Opus. Ask Claude to make a small git commit after each step as an undo trail; you do not need to touch git yourself.
 
-### Step 1 — Explore what's there
-> *"`/opsx:explore` — walk the specs already in this repo and my story with me. What does this change touch? What's still ambiguous? Don't write anything yet."*
+## Step 1: Explore
 
-Nothing is saved in explore — it's thinking time. Let `/grill-me` find the holes if you want.
+Run `/opsx:explore` to walk the specs already in the repo and your story. Run `/grill-me` alongside it to surface what is missing. Nothing is saved here; it is thinking time.
 
-### Step 2 — Scaffold the change
-> *"`/opsx:new` for my story."*
+## Step 2: Generate the proposal and spec
 
-This scaffolds the change. It does **not** write the artifacts yet — that's the next step.
+Generate the change. Either go one artifact at a time with `/opsx:new` then `/opsx:continue`, or generate everything in one step with `/opsx:propose`. Use whichever your repo has. Run `/grill-me` on the proposal and on the spec to pull out the decisions they are still missing.
 
-### Step 3 — Generate one artifact at a time
-> *"`/opsx:continue`."* — produces the **next** artifact. Run it, review, run it again: **proposal → spec → design → tasks.**
+Keep the proposal and the spec identical to the Jira ticket. The requirements come from the ticket, not from you. If the agent adds scope, tell it to match the ticket exactly.
 
-**Keep the proposal and the spec identical to the Jira ticket.** Don't let Claude invent scope — the requirements come from the ticket, not from you. If `/opsx:continue` embellishes, tell it:
-> *"Match the Jira ticket exactly; don't add scope. We're generating the design and tasks, not rewriting the requirements."*
+## Step 3: Split a spec that is too big
 
-### Step 4 — Split if a spec is too big
-If a spec passes **~6–8 WHEN/THEN scenarios**, that's two behaviors — split it into smaller specs *before* generating design + tasks.
-> *"This spec is doing too much — split it into smaller specs, one behavior each."*
+If a spec passes six to eight WHEN/THEN scenarios, that is two behaviors. Split it into smaller specs before you generate the design and tasks.
 
-### Step 5 — Your half: design + tasks
-These come out of `/opsx:continue`. Read them as the person who'll build it:
-- **`design.md`** — architecture, data model, **risks**, tradeoffs. Does the approach hold? Flag anything that contradicts the spec.
-- **`tasks.md`** — a numbered checklist; **every task should trace to a spec decision.** A task that doesn't means the spec is incomplete.
+## Step 4: The design and tasks, your half
 
-**Incremental, full-stack, by behavior.** One capability end to end — never a "frontend task" / "backend task" / "header" split. If it feels big, go back to Step 4 and chop it.
+The design and tasks come out of the same flow. Read them as the person who will build it. The design covers the approach, data, risks, and tradeoffs; check that it holds and flag anything that contradicts the spec. The tasks are a numbered checklist, and every task should trace to a spec decision; one that does not means the spec is incomplete.
 
-### Step 6 — Stop here today
-We're **not** building. Don't run `/opsx:apply` (code) or `/opsx:ff` (all artifacts at once) today — the win is a reviewed **design + tasks**. Building is a later session; when it comes, it's TDD, one task at a time (test → fail → code → pass → commit).
+Keep it to one capability, end to end, full-stack. Do not split by layer or by area of the page. If it feels too big, go back to Step 3 and split.
+
+## Step 5: Stop here today
+
+We are not building. Do not run `/opsx:apply` today; the result we want is a reviewed design and task list. Building is a later session.
 
 ## Done when
 
-- You ran **explore → new → continue**, generating proposal → spec → **design + tasks** for one increment
-- Your **proposal + spec match the Jira ticket**; the **design + tasks** are your value-add
-- You split at least once if a spec was too big
-
-Bring one result and one honest opinion to [Section 3](section-3-qa.md).
+You ran explore, generated a proposal and spec, and produced a design and tasks for one increment. The proposal and spec match the Jira ticket, and the design and tasks are your work. You split at least once if a spec was too big. Bring one result and one honest opinion to Section 3.

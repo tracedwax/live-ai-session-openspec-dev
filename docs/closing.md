@@ -1,38 +1,19 @@
-# Closing — Retro & the Return-on-Time Kata
+# Closing
 
-> **~5 min. All together.** Short and honest. This is also how we shape the next session.
+About 5 minutes, everyone together. Short and honest, and it shapes the next session.
 
-## Quick retro: plus / delta / question
+## Retro
 
-One line each in chat:
-- **Plus** — one thing that worked or surprised you.
-- **Delta** — one thing you'd change about how we ran it.
-- **Question** — one thing still fuzzy.
+One line each in chat: a plus, something that worked; a delta, something to change about how we ran it; and a question, something still fuzzy. Facilitators capture these; they do not defend.
 
-Facilitators **capture, don't defend.**
+## Rate the time
 
-## The Return-on-Time kata
+Drop a number from 0 to 4 in chat for the return on the time you spent. 0 is a waste of time. 1 is some value, not worth the hour. 2 is worth showing up, nothing more. 3 is a good use of time, you learned something or moved work forward. 4 is you would have missed something if you were not here. Then one line: what would move your score up by a full point.
 
-Drop a 0–4 in chat for your return on the time you invested:
+## Homework
 
-| | |
-|---|---|
-| **0** | Waste of time. |
-| **1** | Some value, not worth the hour. |
-| **2** | Worth showing up, nothing more. |
-| **3** | Good use of time — you learned something or moved work forward. |
-| **4** | You'd have missed something if you weren't here. |
-
-Then one line: **what would move your score up by one full point?**
-
-## Homework (one thing)
-
-Take **one real story this week** and run it: spec → design + tasks. Use the flow on something you actually have to build. If a spec turns out too big, split it — that's the rep.
+Take one real story this week and run it: explore, generate the proposal and spec, then the design and tasks. If a spec turns out too big, split it.
 
 ## Before you drop off
 
-Two drops in chat:
-1. **One thing from this session you'll do this week.**
-2. Your **0–4** and the one thing that would move it up.
-
-Thanks for the session.
+Two lines in chat: one thing from today you will do this week, and your 0 to 4 with the one thing that would raise it.
