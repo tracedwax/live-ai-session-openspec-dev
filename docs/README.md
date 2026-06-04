@@ -8,15 +8,15 @@ You work in Claude Code inside VS Code, with the Jira MCP and OpenSpec, on the O
 
 On Tuesday, product practiced taking a story and producing a proposal and specs. One way to divide the work is for that to sit with product and for the spec to come to you. The process itself is out of scope for this training, and that division is a work in progress, not a decision. Today you run the whole pipeline so you can trust a spec you are handed. What we teach is the back half: in comes a spec, and out come a design and tasks a developer or the agent can build from.
 
-## The flow (today's commands)
+## The flow
 
 1. Bring a story and pull it from Jira.
 2. Run `/opsx:explore` to think through the specs already in the repo and your story. Use `/grill-me` here to pressure-test it. Nothing is saved yet.
-3. Run `/opsx:new` to scaffold the change. This creates the change; it does not write the artifacts.
-4. Run `/opsx:continue` to generate the next artifact, one at a time: proposal, then spec, then design, then tasks. Run `/grill-me` again on the proposal and the spec to surface the decisions they are still missing. Keep the proposal and spec identical to the Jira ticket; do not invent scope.
-5. Stop before building. Do not run `/opsx:ff` or `/opsx:apply` today. We want a design and tasks, not code.
+3. Generate the change. Either go one artifact at a time with `/opsx:new` then `/opsx:continue`, or generate them together with `/opsx:propose`. Use whichever your repo has; both produce the proposal, then the spec, then the design, then the tasks.
+4. Run `/grill-me` again on the proposal and the spec to surface the decisions they are still missing, and keep both identical to the Jira ticket. Do not invent scope.
+5. Stop before building. Do not run `/opsx:apply` today. We want a design and tasks, not code.
 
-Going forward, the simplified one-shot command is `/opsx:propose`. Today we use new and continue so we can take the phases one at a time and review each.
+`/opsx:new` plus `/opsx:continue` lets you take the phases one at a time and review each; `/opsx:propose` does them in one step. Either is fine.
 
 Two things we hold to all session. Keep changes small, one or two capabilities, so the agent does not take on too much. Split by behavior, not by area of the page: a spec is a behavior a user can observe end to end, such as guest checkout, not the header or the payment panel.
 

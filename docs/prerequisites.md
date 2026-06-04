@@ -20,9 +20,9 @@ We work in the repo that already has OpenSpec installed and existing specs; your
 
 ## OpenSpec commands
 
-Today's repo ships the older command set: `/opsx:explore`, `/opsx:new`, `/opsx:continue`, and also apply, verify, and archive. We use explore, new, and continue, one artifact at a time, and stop before building. Going forward, the simplified one-shot command is `/opsx:propose`.
+The repo may ship either the older commands or the newer ones, so use whichever it has. To generate the change you can run `/opsx:new` then `/opsx:continue`, one artifact at a time, or `/opsx:propose`, which does it in one step. Both start with `/opsx:explore`. Stop before `/opsx:apply`; we are not building today.
 
-If a command is missing, for example because `openspec update` did not refresh `.claude/commands/opsx/`, there are three options. Create it by hand: a slash command is a markdown file, so ask Claude to look up what `opsx:new` does and write `.claude/commands/opsx/new.md`. Or re-run `openspec update` and restart Claude Code so it reloads the commands. Or skip the command and ask Claude to run the explore, new, and continue workflow itself.
+If a command is missing, for example because `openspec update` did not refresh `.claude/commands/opsx/`, there are three options. Create it by hand: a slash command is a markdown file, so ask Claude to look up what the command does and write `.claude/commands/opsx/<name>.md`. Or re-run `openspec update` and restart Claude Code so it reloads the commands. Or skip the command and ask Claude to run the explore, then new and continue (or propose), workflow itself.
 
 ## If you get stuck
 

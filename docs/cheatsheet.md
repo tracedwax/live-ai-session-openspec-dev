@@ -6,20 +6,19 @@ In comes a spec. Out come a design and tasks you can build from, one small full-
 
 1. Open the repo. It already has OpenSpec and existing specs.
 2. Run `/opsx:explore` to think through the specs that are there and your story. Use `/grill-me` to pressure-test it. Nothing is saved.
-3. Run `/opsx:new` to scaffold the change. No artifacts yet.
-4. Run `/opsx:continue` for the next artifact, one at a time: proposal, spec, design, tasks. Run `/grill-me` on the proposal and spec to surface missing decisions. Review each.
-5. Stop. Do not run `/opsx:ff` or `/opsx:apply` today.
+3. Generate the change: either `/opsx:new` then `/opsx:continue`, one artifact at a time, or `/opsx:propose`, all in one step. Use whichever your repo has.
+4. Run `/grill-me` on the proposal and the spec, and keep them identical to the Jira ticket.
+5. Stop before building. Do not run `/opsx:apply` today.
 
 ## Commands
 
 `/opsx:explore` thinks a story through; nothing is saved.
-`/opsx:new` scaffolds the change.
-`/opsx:continue` generates the next artifact: proposal, spec, design, tasks.
+`/opsx:new` then `/opsx:continue` generates the artifacts one at a time: proposal, spec, design, tasks.
+`/opsx:propose` generates those same artifacts in one step.
 `/grill-me` interviews you one question at a time.
-`/opsx:ff` fast-forwards all artifacts at once; not today.
 `/opsx:apply` builds the code; not today.
 
-Going forward, the simplified one-shot is `/opsx:propose`, which is roughly new plus ff. Today we use new and continue so we can take the phases one at a time.
+Use new and continue, or propose, whichever your repo has. New and continue lets you review each artifact as it lands; propose does it in one step.
 
 ## Rules
 

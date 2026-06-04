@@ -1,16 +1,12 @@
 # Example Stories
 
-Four real tickets, shipped with the repo, if you didn't bring a story or want a reference for "what good looks like." Each is a realistic starting point for the dev flow: **story → proposal → spec → design + tasks.**
+Four real tickets, in case you did not bring a story or want a reference for what good looks like. Each is a realistic starting point for the flow: explore, generate the proposal and spec, then the design and tasks.
 
-| Ticket | Type | Use it as |
-|--------|------|-----------|
-| **PUR-6243** | Bug / Purchase | ✅ **A clean spec exemplar** — its acceptance criteria are already Given/When/Then. Good model for what a `spec.md` should read like before you generate design + tasks. |
-| **CHK-3334** | Story / Checkout | ✏️ **Sharpen-then-build** — requirement-shaped AC; turn it into a proposal + spec, then design + tasks. |
-| **PPA-4978** | Bug / PPA | ✏️ **Behavior-rich** — business rules + edge cases; good for practicing the split when one spec gets too big. |
-| **PUR-6336** | Task / AI data | ✏️ **"Is this one thing or many?"** — an implementation checklist; great for finding behavioral seams and splitting into smaller specs. |
+- PUR-6243 (bug, Purchase): a clean spec to copy. Its acceptance criteria are already in Given/When/Then, so it is a good model for what a spec should read like before you generate design and tasks.
+- CHK-3334 (story, Checkout): requirement-shaped acceptance criteria. Turn it into a proposal and spec, then design and tasks.
+- PPA-4978 (bug, PPA): business rules and edge cases. Good for practicing the split when one spec gets too big.
+- PUR-6336 (task, AI data): an implementation checklist. Good for finding the behavioral seams and splitting into smaller specs.
 
-The full files are in this repo (`examples/`). To use one:
+The full files are in this repo under `examples/`. To use one: pull it from Jira, or read `examples/PUR-6243.md`, treat it as your story, generate the proposal and spec, then take one spec and generate the design and tasks, keeping it to one full-stack increment.
 
-> *"Pull [PUR-6243] from Jira (or read `examples/PUR-6243.md`). Treat it as my story: propose it, break it into specs, then take one spec and generate the design and tasks. Keep it to one full-stack increment."*
-
-> **Splitting:** if a spec ends up with more than ~6–8 WHEN/THEN scenarios, that's two behaviors — split it into smaller specs first, then generate design + tasks for one.
+If a spec ends up with more than six to eight WHEN/THEN scenarios, that is two behaviors. Split it into smaller specs first.

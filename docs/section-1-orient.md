@@ -23,17 +23,17 @@ One person runs the whole flow on a real story while the room watches. Pull the 
 Then run the flow, naming each artifact as it appears.
 
 1. Explore. Run `/opsx:explore` on the specs already in the repo and on the story, and run `/grill-me` alongside it to surface the gaps. Nothing is saved; this is thinking time.
-2. Scaffold. Run `/opsx:new`. It creates the change but does not write the artifacts yet.
-3. Generate one artifact at a time. Run `/opsx:continue` for the proposal, then again for the spec, reviewing each. Run `/grill-me` on the proposal and on the spec to pull out the decisions they are still missing. Keep both identical to the Jira ticket; if the agent adds scope, tell it to match the ticket. Then continue to the design and the tasks.
+2. Generate the proposal and spec. Either run `/opsx:new` then `/opsx:continue` to take them one at a time, or run `/opsx:propose` to generate them in one step, using whichever the repo has. Run `/grill-me` on the proposal and on the spec to pull out the decisions they are still missing. Keep both identical to the Jira ticket; if the agent adds scope, tell it to match the ticket.
+3. Continue to the design and tasks. The same flow produces them. This is the developer's half.
 4. Split when needed. If a spec passes six to eight WHEN/THEN scenarios, it is two behaviors; split it before going on.
-5. Stop before building. Do not run `/opsx:ff` or `/opsx:apply` today; the goal is a design and tasks, not code.
+5. Stop before building. Do not run `/opsx:apply` today; the goal is a design and tasks, not code.
 
-A note for the room: today we use new and continue because that is what is installed, and because it lets us take the phases one at a time. Going forward, the one-shot command is `/opsx:propose`.
+A note for the room: new and continue lets you take the phases one at a time and review each; propose does it in one step. Use whichever the repo has.
 
 Close by pointing at the result: a spec became a design and a task list you could build from, and the requirements stayed faithful to Jira. The worked example page shows a finished one if it helps.
 
-If a command is missing, create it by hand or ask Claude to run the explore, new, and continue workflow itself. If grill-me is not installed, ask Claude to interview you one question at a time.
+If a command is missing, create it by hand or ask Claude to run the workflow itself. If grill-me is not installed, ask Claude to interview you one question at a time.
 
 ## Done when
 
-The room has watched explore, new, and continue produce a proposal, spec, design, and tasks. Everyone understands that the proposal and spec stay faithful to Jira and that the design and tasks are the developer's half. Everyone knows their room and has their story ready.
+The room has watched the flow produce a proposal, spec, design, and tasks. Everyone understands that the proposal and spec stay faithful to Jira and that the design and tasks are the developer's half. Everyone knows their room and has their story ready.
