@@ -3,6 +3,8 @@
 > **This is the reference doc.** It's also the file you drop into your repo so Claude reads the process before it writes anything. Copy this page into your repo as `openspec-process.md` (the [Breakout](section-2-breakout.md) tells you when).
 >
 > **Command note:** This toolchain ships `/opsx:explore` and `/opsx:propose`. `/opsx:propose` generates the **proposal, the capability specs, the design doc, and the tasks together**: you don't run a separate `spec` or `design` command. The artifacts and who owns them are exactly as below; only the command count is smaller.
+>
+> **Dev session focus:** today you own the **bottom half — Spec → Design → Tasks** (steps 3–5 below). Explore, Proposal, and Spec are becoming **Product's** job; you read the whole pipeline so you can trust the spec you're handed, then live in the design and tasks. **Stay incremental:** keep each change to **1–2 capabilities**, and if a spec grows past ~6–8 WHEN/THEN scenarios, split it *before* generating design + tasks.
 
 ## What OpenSpec Solves
 

@@ -22,14 +22,18 @@ You should have one `spec.md` per capability, in **WHEN/THEN**. **If any spec ha
 > *"This spec is doing too much — split it into smaller, independently shippable specs, one behavior each."*
 
 ### Step 4 — Spec → design + tasks  *(your half)*
-Pick **one** spec and generate the engineering artifacts:
-> *"Take `specs/<capability>/spec.md` and generate the design and tasks for it: `design.md` (architecture, data model, risks, tradeoffs) and `tasks.md` (a numbered checklist where each task traces to a spec decision). Keep it to this one capability — one small full-stack increment, not the whole feature."*
+Pick **one** spec and get its engineering artifacts:
+> *"Take `specs/<capability>/spec.md` and give me the design and tasks for it: `design.md` (architecture, data model, risks, tradeoffs) and `tasks.md` (a numbered checklist where each task traces to a spec decision). Just this one capability — one small full-stack increment, not the whole feature."*
+
+(`/opsx:propose` may have already produced these; if so, focus on this one spec and refine them.)
 
 Read them as the person who'll build it:
 - **design.md** — does the approach hold? Read the **risks**; flag anything that contradicts the spec.
 - **tasks.md** — does every task trace back to a spec decision? A task that doesn't means the spec is incomplete.
 
 **Incremental, full-stack, by behavior.** One capability end to end — never a "frontend task" / "backend task" / "header" split. If it feels big, go back to Step 3 and chop it.
+
+> **Want it one artifact at a time?** Turn on OpenSpec's expanded workflow once — `openspec config profile` (choose *expanded*), then `openspec update` — and use `/opsx:continue` to generate the **next** artifact (proposal → spec → design → tasks), stopping to review each. That's the most incremental path.
 
 ### Step 5 — *(stretch)* start building
 > *"`/opsx:apply` and work the first task or two. Show me the diff before anything lands."*
