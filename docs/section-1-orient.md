@@ -8,7 +8,7 @@
 2. **Share your screen** in the breakout so facilitators can unstick you fast.
 3. **Speak up the moment a question lands.**
 
-Two habits all session: **nothing hits Jira until you say go**, and **messy input is the point**.
+Two habits all session: **nothing hits Jira until you say go**, and **messy input is the point**. Keep the **[Cheat Sheet](cheatsheet.md)** open — every command and rule on one screen.
 
 ## Welcome & level-set (5 min)
 
@@ -20,6 +20,8 @@ Confirm everyone has a story open. Anyone without one — flag it.
 ## The handoff frame (3 min)
 
 > "Tuesday, Product turned stories into **proposals and specs**. **Going forward that's their job** — the spec comes to you. Today you'll see the *whole* pipeline so you can trust what you're handed, but your half is the back half: **take a spec, generate the design and the tasks, then build.** In: a spec. Out: design + tasks."
+
+> **Why a dev should care (say it plainly):** *"The spec is how the AI stops guessing. You review a one-page plan of WHEN/THEN — not 500 lines of wrong code you have to unwind afterward. Edge cases get decided **before** you build, not found in QA or prod. And every task traces to a spec decision, so the agent builds against the spec instead of vibing."*
 
 ## Mike runs the whole flow once (12 min)
 
