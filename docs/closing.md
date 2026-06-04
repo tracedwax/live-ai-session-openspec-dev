@@ -1,46 +1,38 @@
-# Closing: Retro & the Return-on-Time Kata
+# Closing — Retro & the Return-on-Time Kata
 
-> **Time: ~5 min. All together.** Short and honest. This is also how we decide what the next session looks like.
+> **~5 min. All together.** Short and honest. This is also how we shape the next session.
 
 ## Quick retro: plus / delta / question
 
-Three columns in chat. One line each, whatever you've got:
+One line each in chat:
+- **Plus** — one thing that worked or surprised you.
+- **Delta** — one thing you'd change about how we ran it.
+- **Question** — one thing still fuzzy.
 
-- **Plus**: one thing that worked or surprised you.
-- **Delta**: one thing you'd change about how we ran it.
-- **Question**: one thing still fuzzy.
-
-Facilitators **capture, don't defend.** A delta is a gift, not a complaint. (Adapted from Aldric's retro frame.)
+Facilitators **capture, don't defend.**
 
 ## The Return-on-Time kata
 
-The kata: every session, in the last minute, you rate your **return on the time you invested** and name the one thing that would raise it. Drop a number 0-4 in chat:
+Drop a 0–4 in chat for your return on the time you invested:
 
 | | |
 |---|---|
 | **0** | Waste of time. |
 | **1** | Some value, not worth the hour. |
 | **2** | Worth showing up, nothing more. |
-| **3** | Good use of time, you learned something or moved work forward. |
+| **3** | Good use of time — you learned something or moved work forward. |
 | **4** | You'd have missed something if you weren't here. |
 
-Then one line:
-
-> **What would move your score up by one full point?**
-
-That line is the most useful thing we get. It shapes the next session directly.
+Then one line: **what would move your score up by one full point?**
 
 ## Homework (one thing)
 
-Use it **once on a real feature this week.** Not a demo, an actual feature you need to break down (or a story's test cases you owe someone). The skill or CLAUDE.md you made today is meant to be used; using it once is how you find out if it's any good.
-
-> If what you built turns out to be the wrong shape, that's a finding. Bring *that*.
+Take **one real story this week** and run it: spec → design + tasks. Use the flow on something you actually have to build. If a spec turns out too big, split it — that's the rep.
 
 ## Before you drop off
 
-Two quick drops in chat:
-
-1. **One thing from this session you'll actually do this week.** Naming it is the difference between "neat" and "done."
-2. Your **0-4** and the one thing that would move it up a point.
+Two drops in chat:
+1. **One thing from this session you'll do this week.**
+2. Your **0–4** and the one thing that would move it up.
 
 Thanks for the session.

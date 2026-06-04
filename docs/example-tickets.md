@@ -1,71 +1,16 @@
-# Example Tickets
+# Example Stories
 
-Four real tickets, here as **illustrations of strong vs weak acceptance criteria**, not work for the session. You bring your own ticket; skim these only to calibrate what "clear, testable behavior" looks like. **PUR-6243** and **PPA-4978** are clean; **CHK-3334** and **PUR-6336** are the messy kind OpenSpec is built to sharpen.
+Four real tickets, shipped with the repo, if you didn't bring a story or want a reference for "what good looks like." Each is a realistic starting point for the dev flow: **story → proposal → spec → design + tasks.**
 
-| Ticket | Type | Use it as | Why |
-|--------|------|-----------|-----|
-| **PUR-6243** | Bug / Purchase | **Good example to copy** | Clean Given/When/Then AC + a test-case-to-AC-to-evidence table. The gold standard for shape. |
-| **PPA-4978** | Bug / PPA | **Good QA example** | Business-rule AC + a scenario/evidence table; AC even bakes in "create an AQA test." |
-| **CHK-3334** | Story / Checkout | **Sharpen this (Product)** | AC written as nested numbered requirements, real, but not testable as written. |
-| **PUR-6336** | Task / AI data | **"Is this even AC?" (Product/QA)** | An implementation checklist masquerading as acceptance criteria. Great for "what's wrong with this?" |
+| Ticket | Type | Use it as |
+|--------|------|-----------|
+| **PUR-6243** | Bug / Purchase | ✅ **A clean spec exemplar** — its acceptance criteria are already Given/When/Then. Good model for what a `spec.md` should read like before you generate design + tasks. |
+| **CHK-3334** | Story / Checkout | ✏️ **Sharpen-then-build** — requirement-shaped AC; turn it into a proposal + spec, then design + tasks. |
+| **PPA-4978** | Bug / PPA | ✏️ **Behavior-rich** — business rules + edge cases; good for practicing the split when one spec gets too big. |
+| **PUR-6336** | Task / AI data | ✏️ **"Is this one thing or many?"** — an implementation checklist; great for finding behavioral seams and splitting into smaller specs. |
 
-> **QA format:** your team's **[Test Case Standard](https://aspenware.atlassian.net/wiki/spaces/QA/pages/4137582614/Test+Case+Standard)** is in Confluence; the complete **`QUAL-4510`** example comes from the session materials. Use those as the format. Other QUAL IDs referenced in these tickets (QUAL-5013, QUAL-2591) are still placeholders we don't have bodies for.
+The full files are in this repo (`examples/`). To use one:
 
----
+> *"Pull [PUR-6243] from Jira (or read `examples/PUR-6243.md`). Treat it as my story: propose it, break it into specs, then take one spec and generate the design and tasks. Keep it to one full-stack increment."*
 
-## PUR-6243: the shape to copy (Given / When / Then)
-
-> **AC 1, Non-fenced Cloud PDP or PCP page + valid discount voucher code**
-> - GIVEN a user navigates to a non-fenced Cloud PDP or PCP URL with a valid discount voucher code appended
-> - WHEN the success modal appears and the user dismisses it (via X or clicking outside)
-> - THEN the Cloud PDP or PCP page loads successfully with no interruption or stall
->
-> **AC 2, Non-fenced Cloud PDP or PCP page + invalid voucher code**
-> - GIVEN a user navigates to a non-fenced Cloud PDP or PCP URL with an invalid voucher code appended
-> - WHEN the error modal appears and the user dismisses it (via X, Cancel, or clicking outside)
-> - THEN the page loads successfully, the "Page not found" page must NOT load
-
-It also maps each AC to a test case and to video evidence. **That mapping is the bit to copy in the QA room.**
-
-## PPA-4978: business-rule AC with testability baked in
-
-> 1. Move the customer-contact update to **after** the auth call.
-> 2. **Create a new AQA test case** to ensure this bug does not return.
-> 3. Nop contact/customer tables are not updated until the RTP auth-profile update succeeds.
-> 4. RTP email profile is only updated if the auth-profile update succeeds.
-> 5. When an email already in use is submitted, the "already in use" error shows, and **no** profile/table updates happen.
-
-Plus a Problem Statement, Impact Statement, Steps to Reproduce, and a scenario table with PASS evidence. **Good model for QA test-case structure.**
-
----
-
-## CHK-3334: sharpen this (Product)
-
-The AC, as written (real):
-
-> 1. Within the Billing Address form for ALL payment gateways, a new checkbox is introduced, "Save this as my primary address", selected by default, always displayed.
-> 2. When selected, the billing address is saved to the AW DB **and** sent to RTP as primary.
-> 3. When not selected, saved to the AW DB only; nothing sent to RTP.
-> 4. Regression: Order Details must reflect whatever was entered at checkout.
-
-**Why it's a good practice target:** it's requirement-shaped, not behavior-shaped. "Always displayed", under every state? Phone required only for FP 3DS, where's that scenario? **Explore** it with Claude and the gaps fall out; **spec** it as testable scenarios and they get answered. (The ticket's own "Testing Notes" scenario table is a hint at what the spec should cover.)
-
-## PUR-6336: is this even AC?
-
-Its "Acceptance Criteria" is a nested implementation checklist, "add a section to the flat file," "identify what tool calls we need," "generate option-2 and option-3 flat files for these 30 product IDs." **That's a task breakdown, not acceptance criteria.** Use it to ask: *what would "done and correct" actually look like to someone verifying this?*, and rewrite it as outcomes.
-
----
-
-## Working from one of these
-
-Drop the ticket into Claude and run your room's flow ([Section 2](section-2-breakout.md)): Product explores the whole thing, finds the seams, and builds the ticket tree; QA holds it to the standard and writes the cases. Use your own words, the prompts live in the breakout's click-to-open examples if you get stuck.
-
-<details>
-<summary>Here's an example you can use, only if you're stuck</summary>
-
-**Product:**
-> *"Let's use OpenSpec. Explore this whole feature with me before we write or split anything, [paste your ticket]. What are all the distinct behaviors here? Ask me one thing at a time."* then run the `grill-me` skill, then *"Split this into independently shippable behaviors, each with a one-line 'Why', then build the Epic + Stories + sub-tasks in my Jira project. Show me the tree first."*
-
-**QA:**
-> *"Follow our Test Case Standard at https://aspenware.atlassian.net/wiki/spaces/QA/pages/4137582614/Test+Case+Standard and match the format of the `QUAL-4510` example. Draft test cases for this story: Action / Data / Expected Result, definitive language, negative path inline. If test cases already exist, normalize them to the standard and flag duplicates."*
-</details>
+> **Splitting:** if a spec ends up with more than ~6–8 WHEN/THEN scenarios, that's two behaviors — split it into smaller specs first, then generate design + tasks for one.
