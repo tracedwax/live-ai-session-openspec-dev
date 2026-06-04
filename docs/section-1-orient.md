@@ -19,7 +19,7 @@ Confirm everyone has a story open. Anyone without one — flag it.
 
 ## The handoff frame (3 min)
 
-> "Tuesday, Product turned stories into **proposals and specs**. **Going forward that's their job** — the spec comes to you. Today you'll see the *whole* pipeline so you can trust what you're handed, but your half is the back half: **take a spec, generate the design and the tasks, then build.** In: a spec. Out: design + tasks."
+> "Tuesday, Product turned stories into **proposals and specs**. **Going forward that's their job** — the spec comes to you. Today you'll run the *whole* pipeline so you can trust what you're handed, but your half is the back half: **the design and the tasks.** In: a spec. Out: design + tasks. No code today."
 
 > **Why a dev should care (say it plainly):** *"The spec is how the AI stops guessing. You review a one-page plan of WHEN/THEN — not 500 lines of wrong code you have to unwind afterward. Edge cases get decided **before** you build, not found in QA or prod. And every task traces to a spec decision, so the agent builds against the spec instead of vibing."*
 
@@ -29,22 +29,24 @@ Confirm everyone has a story open. Anyone without one — flag it.
 
 **The reveal — Claude reads Jira:** *"Pull my story from Jira and summarize it."* → "I didn't paste it; Claude read it through the **MCP**."
 
-Then the flow, one artifact at a time (this is what the rooms repeat):
+Then the flow (this is what the rooms repeat):
 
-1. **Story → proposal.** `/opsx:propose`. Open `proposal.md`, read the **Why / What Changes / Capabilities / Impact**. *"This is Product's deliverable going forward."*
-2. **Proposal → specs.** One `spec.md` per capability, in **WHEN/THEN**. *"Also Product's, with you reviewing."*
-3. **Split if too big.** If a spec has **more than ~6–8 WHEN/THEN** scenarios, it's two behaviors — split it into smaller specs *before* going further. Show that judgment call out loud.
-4. **Spec → design + tasks (your half).** Take **one** spec and generate `design.md` (architecture, data, **risks**) and `tasks.md` (a numbered checklist, each item tracing to a decision). *"This is where your job starts."*
-5. **Name the discipline:** *"One spec, one full-stack increment — a behavior, not a page area. Small chunks, or the agent goes off the rails."*
+1. **Explore what's there.** `/opsx:explore` the specs already in the repo and your story. *"Thinking time — nothing's saved yet."*
+2. **Scaffold.** `/opsx:new` creates the change. *"It scaffolds; it doesn't write the artifacts yet."*
+3. **Generate one artifact at a time.** `/opsx:continue` produces the **next** artifact — proposal → spec → design → tasks — and you review each. **Keep the proposal and spec identical to the Jira ticket**; if it embellishes, say *"match the ticket exactly, don't add scope."* *"The requirements are Product's; your value-add is the design and the tasks."*
+4. **Split if too big.** If a spec passes ~6–8 WHEN/THEN scenarios, it's two behaviors — split before going on.
+5. **Stop before building.** We do **not** run `/opsx:ff` (fast-forwards everything) or `/opsx:apply` (writes code) today — the goal is **design + tasks**, not code.
 
-Close: *"That's the target — a spec became a design and a task list you could build from. You'll do it on your own story in a minute."* (Want to see a finished one first? Show the **[Worked Example](worked-example.md)**.)
+> **Today vs. go-forward (say it):** *"Today we use `/opsx:new` + `/opsx:continue` — that's what's installed, and it lets us break the phases out and review each. The go-forward command is `/opsx:propose`, which rolls these up."*
 
-> **Fallbacks:** No `/opsx:propose`? *"Look up OpenSpec's opsx propose and run that workflow yourself."* No `/grill-me`? *"Interview me one question at a time before writing."*
+Close: *"That's the target — a spec became a design and a task list you could build from, and we kept the requirements faithful to Jira. You'll do it on your own story in a minute."* (Want to see a finished one first? Show the **[Worked Example](worked-example.md)**.)
+
+> **Fallback:** No `/opsx:*` commands in the repo? *"Look up OpenSpec's explore/new/continue and run that workflow yourself."* No `/grill-me`? *"Interview me one question at a time before writing."*
 
 ## Done when
 
-- The room has seen **story → proposal → specs → one spec → design + tasks**, named with owners
-- Everyone knows the handoff (proposal+spec → Product; spec → design+tasks → you)
+- The room has seen **explore → new → continue** produce proposal → spec → **design + tasks**, named with owners
+- Everyone knows the handoff (proposal + spec faithful to Jira; design + tasks are the dev's)
 - Everyone knows their room and their story
 
 Send them to [Section 2](section-2-breakout.md).

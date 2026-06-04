@@ -1,50 +1,50 @@
 # Section 2 — Breakout: run it on your own story
 
-> **~35 min. Two rooms.** You saw the shape; now do it. **In: a spec. Out: design + tasks** — one small, full-stack increment. Hands on keys, screens shared.
+> **~35 min. Two rooms** (dev rooms, split for size). **In: a spec. Out: design + tasks** — one small, full-stack increment. **No code today.** Hands on keys, screens shared.
 
 **Each step says what to accomplish, not what to type** — talking to the agent in your own words *is* the skill. Stuck for words? Open the example prompt. Examples are a safety net, not the path.
 
 > **Don't one-shot it.** Make one artifact, read it, fix it, then the next. If the agent races ahead, tell it to slow down.
 
-### Step 0 — Open your repo
-Open Claude in a repo you can write to, on **Opus**. Make sure **OpenSpec** is available (`openspec init`, or ask Claude). Ask Claude to **autosave** (a tiny git commit after each step — your undo trail; you never touch git).
+> **Today's commands.** This repo ships the older OpenSpec set, so we use **`/opsx:explore` → `/opsx:new` → `/opsx:continue`**, one artifact at a time, and **stop before building** — no `/opsx:ff` (fast-forwards everything), no `/opsx:apply` (writes code). *(Go-forward, the simplified one-shot is `/opsx:propose`.)*
 
-### Step 1 — Pull your story
-> *"Pull story [KEY] from Jira and summarize what it's asking for. Don't write anything yet — tell me what's still ambiguous."*
+### Step 0 — Open the repo
+Open Claude in the repo we're working in today (it already has OpenSpec and existing specs), on **Opus**. Ask Claude to **autosave** — a tiny git commit after each step (your undo trail; you never touch git).
 
-### Step 2 — Story → proposal
-> *"`/opsx:propose` for this story."* Read `proposal.md`: is the **Why** right? Are the **Capabilities** named as behaviors? Fix anything wrong before moving on.
+### Step 1 — Explore what's there
+> *"`/opsx:explore` — walk the specs already in this repo and my story with me. What does this change touch? What's still ambiguous? Don't write anything yet."*
 
-> **Note:** Steps 2–3 become **Product's** job going forward. You're learning them so you can review the spec you'll be handed — then your real work starts at Step 4.
+Nothing is saved in explore — it's thinking time. Let `/grill-me` find the holes if you want.
 
-### Step 3 — Proposal → specs (split if too big)
-You should have one `spec.md` per capability, in **WHEN/THEN**. **If any spec has more than ~6–8 scenarios, split it into smaller specs first** — that's two behaviors hiding in one.
-> *"This spec is doing too much — split it into smaller, independently shippable specs, one behavior each."*
+### Step 2 — Scaffold the change
+> *"`/opsx:new` for my story."*
 
-### Step 4 — Spec → design + tasks  *(your half)*
-Pick **one** spec and get its engineering artifacts:
-> *"Take `specs/<capability>/spec.md` and give me the design and tasks for it: `design.md` (architecture, data model, risks, tradeoffs) and `tasks.md` (a numbered checklist where each task traces to a spec decision). Just this one capability — one small full-stack increment, not the whole feature."*
+This scaffolds the change. It does **not** write the artifacts yet — that's the next step.
 
-(`/opsx:propose` may have already produced these; if so, focus on this one spec and refine them.)
+### Step 3 — Generate one artifact at a time
+> *"`/opsx:continue`."* — produces the **next** artifact. Run it, review, run it again: **proposal → spec → design → tasks.**
 
-Read them as the person who'll build it:
-- **design.md** — does the approach hold? Read the **risks**; flag anything that contradicts the spec.
-- **tasks.md** — does every task trace back to a spec decision? A task that doesn't means the spec is incomplete.
+**Keep the proposal and the spec identical to the Jira ticket.** Don't let Claude invent scope — the requirements are Product's. If `/opsx:continue` embellishes, tell it:
+> *"Match the Jira ticket exactly; don't add scope. We're generating the design and tasks, not rewriting the requirements."*
 
-**Incremental, full-stack, by behavior.** One capability end to end — never a "frontend task" / "backend task" / "header" split. If it feels big, go back to Step 3 and chop it.
+### Step 4 — Split if a spec is too big
+If a spec passes **~6–8 WHEN/THEN scenarios**, that's two behaviors — split it into smaller specs *before* generating design + tasks.
+> *"This spec is doing too much — split it into smaller specs, one behavior each."*
 
-> **Want it one artifact at a time?** Turn on OpenSpec's expanded workflow once — `openspec config profile` (choose *expanded*), then `openspec update` — and use `/opsx:continue` to generate the **next** artifact (proposal → spec → design → tasks), stopping to review each. That's the most incremental path.
+### Step 5 — Your half: design + tasks
+These come out of `/opsx:continue`. Read them as the person who'll build it:
+- **`design.md`** — architecture, data model, **risks**, tradeoffs. Does the approach hold? Flag anything that contradicts the spec.
+- **`tasks.md`** — a numbered checklist; **every task should trace to a spec decision.** A task that doesn't means the spec is incomplete.
 
-### Step 5 — *(stretch)* start building
-Build **one task at a time, TDD** — the discipline that keeps the agent honest:
-> *"`/opsx:apply`. Work the tasks one at a time, in order: for each, write the test first, run it and watch it fail, write the code, run it and watch it pass, then commit. Show me the diff before anything lands."*
+**Incremental, full-stack, by behavior.** One capability end to end — never a "frontend task" / "backend task" / "header" split. If it feels big, go back to Step 4 and chop it.
 
-Each task already traces to a spec decision, so the agent **executes the plan instead of guessing.** If a task is too vague to test, the spec or design is incomplete — fix that first. Ambiguity dies in planning, not in the build.
+### Step 6 — Stop here today
+We're **not** building. Don't run `/opsx:apply` (code) or `/opsx:ff` (all artifacts at once) today — the win is a reviewed **design + tasks**. Building is a later session; when it comes, it's TDD, one task at a time (test → fail → code → pass → commit).
 
 ## Done when
 
-- You took **one spec** and produced a **reviewed `design.md` + `tasks.md`** for one full-stack increment
-- You split at least once if your spec was too big
-- *(stretch)* you started `/opsx:apply` on the first task
+- You ran **explore → new → continue**, generating proposal → spec → **design + tasks** for one increment
+- Your **proposal + spec match the Jira ticket**; the **design + tasks** are your value-add
+- You split at least once if a spec was too big
 
 Bring one result and one honest opinion to [Section 3](section-3-qa.md).
