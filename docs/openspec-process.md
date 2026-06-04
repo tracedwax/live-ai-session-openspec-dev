@@ -1,12 +1,12 @@
-# OpenSpec — A Potential Requirements Process (WIP)
+# OpenSpec: A Potential Requirements Process (work in progress)
 
-> ⚠️ **Potential process, not prescribed — and out of scope for this training.** The customer was clear that *process* is out of scope here. This page sketches **one possible way** OpenSpec could fit a software lifecycle, only to give today's **tool** practice a frame. It is a **work in progress**, illustrative — adopt it, change it, or ignore it. Today we learn the **tool** (a spec → a design + tasks), not a process.
+> This is a potential process, not a prescribed one, and process is out of scope for this training. The page sketches one way OpenSpec could fit a software lifecycle, to give today's tool practice a frame. It is a work in progress and illustrative only; adopt it, change it, or ignore it. Today we are learning the tool, taking a spec to a design and tasks, not adopting a process.
 
-> **Reference doc.** You can also drop this file into your repo so Claude reads the framing before it writes. Copy this page into your repo as `openspec-process.md` (the [Breakout](section-2-breakout.md) tells you when).
+> This is also a reference you can drop into your repo so Claude reads the framing before it writes. Copy this page into your repo as `openspec-process.md` when the breakout tells you to.
 >
-> **Command note (today):** the repo we use ships the **older** OpenSpec commands — `/opsx:explore`, `/opsx:new`, `/opsx:continue` (plus `apply`, `verify`, `archive`). We run **explore → new → continue** to produce the artifacts **one at a time** (proposal → spec → design → tasks), and **stop before `apply`/`ff`** (no code today). *Go-forward,* the simplified one-shot **`/opsx:propose`** rolls proposal + specs + design + tasks together. **If a command is missing** (e.g. `openspec update` didn't refresh them), create it by hand — a slash command is just a markdown file at `.claude/commands/opsx/<name>.md` — or ask Claude to look up the OpenSpec workflow and run it itself.
+> Commands: start with `/opsx:explore`. To generate the change, either run `/opsx:new` then `/opsx:continue` one artifact at a time, or run `/opsx:propose` to do it in one step. Use whichever your repo has; both produce the proposal, spec, design, and tasks. Stop before `/opsx:apply`, since there is no code today. If a command is missing because openspec update did not refresh it, create it by hand (a slash command is a markdown file at `.claude/commands/opsx/<name>.md`), or ask Claude to run the workflow itself.
 >
-> **Dev session focus:** today you own the **bottom half — Spec → Design → Tasks** (steps 3–5 below). Explore, Proposal, and Spec are becoming **Product's** job; you read the whole pipeline so you can trust the spec you're handed, then live in the design and tasks. **Stay incremental:** keep each change to **1–2 capabilities**, and if a spec grows past ~6–8 WHEN/THEN scenarios, split it *before* generating design + tasks.
+> For this session, the part you own is the back half: spec, then design, then tasks (steps 3 to 5 below). Who owns explore, proposal, and spec is out of scope and a team decision; today you run the whole pipeline so you can trust a spec you are handed, then focus on the design and tasks. Keep each change small, one or two capabilities, and if a spec grows past six to eight WHEN/THEN scenarios, split it before generating design and tasks.
 
 ## What OpenSpec Solves
 
