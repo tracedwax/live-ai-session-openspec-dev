@@ -37,7 +37,7 @@ Then the flow, one artifact at a time (this is what the rooms repeat):
 4. **Spec → design + tasks (your half).** Take **one** spec and generate `design.md` (architecture, data, **risks**) and `tasks.md` (a numbered checklist, each item tracing to a decision). *"This is where your job starts."*
 5. **Name the discipline:** *"One spec, one full-stack increment — a behavior, not a page area. Small chunks, or the agent goes off the rails."*
 
-Close: *"That's the target — a spec became a design and a task list you could build from. You'll do it on your own story in a minute."*
+Close: *"That's the target — a spec became a design and a task list you could build from. You'll do it on your own story in a minute."* (Want to see a finished one first? Show the **[Worked Example](worked-example.md)**.)
 
 > **Fallbacks:** No `/opsx:propose`? *"Look up OpenSpec's opsx propose and run that workflow yourself."* No `/grill-me`? *"Interview me one question at a time before writing."*
 

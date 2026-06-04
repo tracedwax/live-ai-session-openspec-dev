@@ -1,6 +1,7 @@
 * [Home](/)
 * [Prerequisites](prerequisites.md)
 * [Cheat Sheet](cheatsheet.md)
+* [Worked Example](worked-example.md)
 * [Run of Show](workshop-flow.md)
 * [Section 1 — Orient](section-1-orient.md)
 * [Section 2 — Breakout](section-2-breakout.md)
