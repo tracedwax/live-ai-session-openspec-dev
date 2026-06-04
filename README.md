@@ -2,7 +2,7 @@
 
 A hands-on, ~75-minute live session for **developers**. It picks up where the Product session left off: a **spec** comes to you, and you turn it into a **design** and **tasks** — one small, full-stack increment at a time.
 
-> Flow: **story → `/opsx:propose` → break into specs (split if too big) → take one spec → design + tasks.** In: a spec. Out: design + tasks. Incremental, full-stack by behavior, small chunks.
+> **Today's flow:** **`/opsx:explore`** the specs that are there → **`/opsx:new`** → **`/opsx:continue`** one artifact at a time (proposal → spec → design → tasks). Keep the proposal + spec **identical to the Jira ticket**; your value-add is **design + tasks**. **No code today** (no `ff`/`apply`). *Go-forward command: `/opsx:propose`.*
 
 Built in **Claude Code + VS Code** with the **Jira MCP** and **OpenSpec** (`/opsx:*`), on **Opus**.
 
