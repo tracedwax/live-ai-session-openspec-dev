@@ -1,6 +1,6 @@
 # Prerequisites
 
-Two required things, and a few that make the hour real.
+Two required things, and a few that make the session real.
 
 ## Required: Claude Code in VS Code (on Opus)
 
@@ -16,14 +16,20 @@ Bring **one real story** you'd actually pick up. Rough is fine — unrefined is 
 
 **Restart Claude Code after connecting** so the tools load; confirm `claude mcp list` shows `atlassian … ✓ Connected`. Any live writes go to the **Mocking Project (`MP`)** sandbox, not a real backlog.
 
-## OpenSpec
+## The repo we work in
 
-The flow uses `/opsx:propose` (and `/opsx:apply`). If your repo doesn't have it:
-- Run `openspec init` in your repo (`npm i -g @fission-ai/openspec` first if needed), **or**
-- Tell Claude: *"Look up what OpenSpec's opsx propose does and run that workflow yourself."*
+Today we work in the repo that already has **OpenSpec installed and existing specs** (your facilitator points you to it). OpenSpec writes `openspec/changes/<change>/` files there. You write **no application code** today — just the proposal, specs, design, and tasks.
 
-## A repo to work in
+## OpenSpec commands (today vs. go-forward)
 
-Open Claude in a repo you can write to — your own working repo is fine. OpenSpec writes `openspec/changes/<change>/` files here (proposal, specs, design, tasks). You write **no application code** today unless you reach the build stretch.
+Today's repo ships the **older** set: **`/opsx:explore`, `/opsx:new`, `/opsx:continue`** (plus `apply`, `verify`, `archive`). We use **explore → new → continue** — one artifact at a time — and **stop before building** (no `ff`, no `apply`). *Go-forward,* the simplified one-shot is **`/opsx:propose`**.
 
-> **Stuck on setup?** Post in the channel before the session — we'd rather fix it now than spend live minutes on it.
+**If an `/opsx:*` command is missing** (e.g. `openspec update` didn't refresh `.claude/commands/opsx/`), three fallbacks — easiest first:
+
+1. **Create it by hand** — a slash command is just a markdown file in `.claude/commands/`. Ask Claude: *"Look up what OpenSpec's `opsx:new` command does and create `.claude/commands/opsx/new.md` for it."*
+2. **Re-run `openspec update`, then restart Claude Code** so it reloads the commands.
+3. **Skip the command** — *"Look up OpenSpec's explore / new / continue workflow and just run it yourself."*
+
+## Stuck on setup?
+
+Post in the channel before the session — we'd rather fix it now than spend live minutes on it.

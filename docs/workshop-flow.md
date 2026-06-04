@@ -6,18 +6,18 @@
 
 | Section | Time | Who | What |
 |---------|------|-----|------|
-| **1 — Orient** | 0:00–0:20 | Everyone | Level-set, the handoff frame, connect Jira, **Mike runs the whole flow once** (story → proposal → specs → one spec → design + tasks) |
+| **1 — Orient** | 0:00–0:20 | Everyone | Level-set, the handoff frame, connect Jira, **Mike runs the whole flow once** (`explore → new → continue`: proposal → spec → design → tasks) |
 | **2 — Breakout** | 0:20–0:55 | Two dev rooms | Each dev runs it on their own story; the win is **one spec → reviewed design + tasks** |
 | **3 — Reconvene** | 0:55–1:10 | Everyone | Two people show a result, open questions |
 | **Closing** | 1:10–1:15 | Everyone | Plus/delta retro + rate the session |
 
-> **Buffer:** Section 2 carries the slack. If a room flies, push `/opsx:apply` to start building from the tasks. If it's slow, protect the one win: **one spec → a reviewed `design.md` + `tasks.md`.**
+> **Buffer:** Section 2 carries the slack. If a room flies, generate the next change. If it's slow, protect the one win: **one spec → a reviewed `design.md` + `tasks.md`.** Either way, **no `apply`/`ff` today** — design + tasks, not code.
 
 ## The spine (the whole session in one line)
 
-> **Story → `/opsx:propose` → break into specs (split any spec that's too big) → take ONE spec → generate design + tasks → review.** In: a spec. Out: design + tasks. **Incremental, full-stack by behavior, small chunks.**
+> **`/opsx:explore` the specs that are there → `/opsx:new` → `/opsx:continue` one artifact at a time (proposal → spec → design → tasks) → review each.** Keep the **proposal + spec identical to Jira**; your value-add is **design + tasks.** No `ff`/`apply` today. *(Go-forward command: `/opsx:propose`.)*
 
-> **The handoff (say it):** proposal + specs become **Product's** job going forward. Devs learn the whole pipeline today so they can trust the spec they're handed; the dev's half is **spec → design + tasks → build.**
+> **The handoff (say it):** proposal + specs become **Product's** job going forward. Devs run the whole pipeline today so they can trust the spec they're handed; the dev's half is **design + tasks → build.**
 
 ## Facilitators & rooms
 
@@ -34,10 +34,10 @@ Open and close together.
 
 - [ ] **Claude Code in VS Code**, signed in, **Opus** model
 - [ ] **Jira MCP connected (global)** — `claude mcp add --transport http --scope user atlassian https://mcp.atlassian.com/v1/mcp`, then `/mcp` to log in; **restart** so tools load
-- [ ] **OpenSpec available** — `/opsx:propose` works (`npm i -g @fission-ai/openspec` + `openspec init`, or ask Claude to look it up and run it)
-- [ ] A **repo to work in** — OpenSpec writes `openspec/changes/...` here
+- [ ] **The working repo** open — it has OpenSpec installed and **existing specs**; OpenSpec writes `openspec/changes/...` here
+- [ ] **OpenSpec commands present** — `/opsx:explore`, `/opsx:new`, `/opsx:continue`. Missing one? Create the file by hand at `.claude/commands/opsx/<name>.md` (or ask Claude), or re-run `openspec update` + **restart**. See [Prerequisites](prerequisites.md).
 - [ ] Each dev has **one real story** to bring
-- [ ] Any Jira writes go to the **Mocking Project (`MP`)** sandbox, not a real backlog
+- [ ] Any Jira writes go to the **Mocking Project (`MP`)** sandbox
 
 ## The pages
 
@@ -45,17 +45,17 @@ Open and close together.
 2. [Section 2 — Breakout](section-2-breakout.md) — the activity, with every prompt
 3. [Section 3 — Reconvene](section-3-qa.md) — show & ask
 4. [Closing](closing.md) — retro + Return-on-Time kata
-5. [Facilitator Guide](facilitator-guide.md) — cues, risks, recovery
-6. [The OpenSpec Process](openspec-process.md) — the reference (who owns each artifact)
-7. [Example Stories](example-tickets.md) — four real tickets to practice on
+5. [Cheat Sheet](cheatsheet.md) · [Worked Example](worked-example.md) · [The OpenSpec Process](openspec-process.md) — references
 
 ## Dry-run focus
 
-Short on time? **Mike runs the flow end-to-end once** (story → proposal → 2–3 specs → split one → pick one spec → `design.md` + `tasks.md`), narrating the **split-if-too-big** moment and the **proposal+spec is Product's going forward** frame. Then one dev runs **spec → design + tasks** live. That's the session.
+Short on time? **Mike runs it end-to-end once**: `/opsx:explore` the existing specs → `/opsx:new` → `/opsx:continue` (proposal → spec → design → tasks), narrating **keep proposal+spec identical to Jira**, the **split-if-too-big** moment, and **stop before build**. Then one dev runs it live. That's the session.
 
 ## Housekeeping (read at the top)
 
 - **Hands on keys.** Everyone runs it on their own story, screens shared.
-- **Incremental, small chunks.** One spec at a time; split anything too big *before* generating design/tasks.
+- **Incremental, small chunks.** `/opsx:continue` one artifact at a time; split a spec >6–8 scenarios *before* design/tasks.
 - **Behavior, not page area.** A spec is a full-stack behavior, never "the frontend" or "one panel."
+- **Faithful to Jira.** Proposal + spec mirror the ticket; design + tasks are the value-add.
+- **No code today.** Stop at design + tasks; don't `apply` or `ff`.
 - **Nothing hits Jira without you confirming it.**
