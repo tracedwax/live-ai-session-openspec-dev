@@ -1,6 +1,8 @@
-# OpenSpec: The Product Requirements Process
+# OpenSpec — A Potential Requirements Process (WIP)
 
-> **This is the reference doc.** It's also the file you drop into your repo so Claude reads the process before it writes anything. Copy this page into your repo as `openspec-process.md` (the [Breakout](section-2-breakout.md) tells you when).
+> ⚠️ **Potential process, not prescribed — and out of scope for this training.** The customer was clear that *process* is out of scope here. This page sketches **one possible way** OpenSpec could fit a software lifecycle, only to give today's **tool** practice a frame. It is a **work in progress**, illustrative — adopt it, change it, or ignore it. Today we learn the **tool** (a spec → a design + tasks), not a process.
+
+> **Reference doc.** You can also drop this file into your repo so Claude reads the framing before it writes. Copy this page into your repo as `openspec-process.md` (the [Breakout](section-2-breakout.md) tells you when).
 >
 > **Command note (today):** the repo we use ships the **older** OpenSpec commands — `/opsx:explore`, `/opsx:new`, `/opsx:continue` (plus `apply`, `verify`, `archive`). We run **explore → new → continue** to produce the artifacts **one at a time** (proposal → spec → design → tasks), and **stop before `apply`/`ff`** (no code today). *Go-forward,* the simplified one-shot **`/opsx:propose`** rolls proposal + specs + design + tasks together. **If a command is missing** (e.g. `openspec update` didn't refresh them), create it by hand — a slash command is just a markdown file at `.claude/commands/opsx/<name>.md` — or ask Claude to look up the OpenSpec workflow and run it itself.
 >

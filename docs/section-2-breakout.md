@@ -24,7 +24,7 @@ This scaffolds the change. It does **not** write the artifacts yet — that's th
 ### Step 3 — Generate one artifact at a time
 > *"`/opsx:continue`."* — produces the **next** artifact. Run it, review, run it again: **proposal → spec → design → tasks.**
 
-**Keep the proposal and the spec identical to the Jira ticket.** Don't let Claude invent scope — the requirements are Product's. If `/opsx:continue` embellishes, tell it:
+**Keep the proposal and the spec identical to the Jira ticket.** Don't let Claude invent scope — the requirements come from the ticket, not from you. If `/opsx:continue` embellishes, tell it:
 > *"Match the Jira ticket exactly; don't add scope. We're generating the design and tasks, not rewriting the requirements."*
 
 ### Step 4 — Split if a spec is too big

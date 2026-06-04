@@ -19,7 +19,9 @@ Confirm everyone has a story open. Anyone without one — flag it.
 
 ## The handoff frame (3 min)
 
-> "Tuesday, Product turned stories into **proposals and specs**. **Going forward that's their job** — the spec comes to you. Today you'll run the *whole* pipeline so you can trust what you're handed, but your half is the back half: **the design and the tasks.** In: a spec. Out: design + tasks. No code today."
+> "Tuesday, Product turned stories into **proposals and specs**. One *possible* way to split this is for that to become their job and the spec to come to you — but **the process is out of scope today; we're here for the tool.** Either way, what you'll practice is the back half: **the design and the tasks.** In: a spec. Out: design + tasks. No code today."
+
+> *(Facilitator: that "Product owns proposal + spec, devs own design + tasks" division is a **potential** process — WIP, not a mandate. If anyone asks about process, say it's their call and out of scope for today.)*
 
 > **Why a dev should care (say it plainly):** *"The spec is how the AI stops guessing. You review a one-page plan of WHEN/THEN — not 500 lines of wrong code you have to unwind afterward. Edge cases get decided **before** you build, not found in QA or prod. And every task traces to a spec decision, so the agent builds against the spec instead of vibing."*
 

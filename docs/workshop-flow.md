@@ -17,7 +17,7 @@
 
 > **`/opsx:explore` the specs that are there → `/opsx:new` → `/opsx:continue` one artifact at a time (proposal → spec → design → tasks) → review each.** Keep the **proposal + spec identical to Jira**; your value-add is **design + tasks.** No `ff`/`apply` today. *(Go-forward command: `/opsx:propose`.)*
 
-> **The handoff (say it):** proposal + specs become **Product's** job going forward. Devs run the whole pipeline today so they can trust the spec they're handed; the dev's half is **design + tasks → build.**
+> **The handoff (say it — and flag it as WIP):** *one possible* split is proposal + specs → **Product**, design + tasks → **devs**. **Process is out of scope today**; this division is a potential/WIP frame, not a mandate — say so if anyone asks. Devs run the whole pipeline today only so they can trust a spec they're handed; what we're really teaching is the **tool**.
 
 ## Facilitators & rooms
 

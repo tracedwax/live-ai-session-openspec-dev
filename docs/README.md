@@ -4,9 +4,9 @@ Welcome. This is the **developer** session. It picks up where the Product sessio
 
 > **Tooling:** Claude Code in **VS Code**, with the **Jira MCP** and **OpenSpec** (`/opsx:*`). Model: **Opus**.
 
-## The handoff (say this out loud)
+## The handoff (a potential split — WIP, out of scope)
 
-Tuesday, Product learned to take a story and produce a **proposal** and **specs**. **Going forward, that's Product's job** — proposal and spec come *to* you. Today you run the **whole** pipeline so you can trust what you're handed, but **your half is the back half**:
+Tuesday, Product learned to take a story and produce a **proposal** and **specs**. *One possible* way to divide the work is for that to be Product's job and the spec to come *to* you — but **process is out of scope for this training; that division is a potential/WIP frame, not a mandate.** Today you run the **whole** pipeline only so you can trust a spec you're handed. What we're teaching is the back half:
 
 > **In: an OpenSpec spec. Out: a design and tasks** a developer (or the agent) can build from.
 

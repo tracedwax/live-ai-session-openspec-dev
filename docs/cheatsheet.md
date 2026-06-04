@@ -31,5 +31,5 @@ One screen. Keep it open while you work.
 - **Every task traces to a spec decision.** If not, the spec is incomplete.
 - **Confirm before any Jira write.** Sandbox = **Mocking Project (`MP`)**.
 
-## The handoff
-Proposal + spec → **Product** going forward. Your half: **design → tasks** (→ build, a later session).
+## The handoff *(potential process — WIP, out of scope today)*
+*One possible* split: proposal + spec → **Product**, design + tasks → **you**. **Not prescribed** — process is your team's call and out of scope for this training. What we practice today is the **tool**: spec → design → tasks (→ build, later).
