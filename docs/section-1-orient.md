@@ -1,54 +1,39 @@
-# Section 1 — Orient
+# Section 1: Orient
 
-> **~20 min. All together.** Ends with everyone having watched the whole flow once and knowing their half of it.
+About 20 minutes, everyone together. By the end, the room has watched the whole flow once and knows which half is theirs.
 
-## Rules of engagement (read first)
+## Rules of engagement
 
-1. **Follow along live** — do it on your own machine, not by watching.
-2. **Share your screen** in the breakout so facilitators can unstick you fast.
-3. **Speak up the moment a question lands.**
+Follow along live on your own machine; you learn this by doing it, not by watching. Share your screen in the breakout so facilitators can help quickly. Ask questions the moment they come up. Two habits we keep all session: nothing is written to Jira until you approve it, and rough input is fine, because half-formed notes feed the agent better than a polished paragraph. Keep the cheat sheet open.
 
-Two habits all session: **nothing hits Jira until you say go**, and **messy input is the point**. Keep the **[Cheat Sheet](cheatsheet.md)** open — every command and rule on one screen.
+## Level-set (5 minutes)
 
-## Welcome & level-set (5 min)
+Go around the room. Each person says what they did with AI this past week and which story they brought today. Confirm everyone has a story open in Jira, and flag anyone who does not.
 
-Round-robin, two things each:
-> *"What did you do with AI this week? And which story did you bring today?"*
+## The handoff (3 minutes)
 
-Confirm everyone has a story open. Anyone without one — flag it.
+On Tuesday, product practiced turning stories into proposals and specs. One way to split the work is for that to be their job and the spec to come to you, but the process is out of scope today and that split is a work in progress, not a decision. What you practice today is the back half: a spec becomes a design and a task list. In comes a spec, out come a design and tasks. No code today.
 
-## The handoff frame (3 min)
+The reason a developer should care: the spec is how the agent stops guessing. You review a short plan of WHEN and THEN behavior instead of unwinding hundreds of lines of wrong code afterward. Edge cases are decided before the build, not found in QA or production. And every task traces back to a spec decision, so the agent builds against the spec rather than improvising.
 
-> "Tuesday, Product turned stories into **proposals and specs**. One *possible* way to split this is for that to become their job and the spec to come to you — but **the process is out of scope today; we're here for the tool.** Either way, what you'll practice is the back half: **the design and the tasks.** In: a spec. Out: design + tasks. No code today."
+## The walkthrough (12 minutes)
 
-> *(Facilitator: that "Product owns proposal + spec, devs own design + tasks" division is a **potential** process — WIP, not a mandate. If anyone asks about process, say it's their call and out of scope for today.)*
+One person runs the whole flow on a real story while the room watches. Pull the story from Jira first, so the room sees Claude read it through the MCP rather than pasting it in.
 
-> **Why a dev should care (say it plainly):** *"The spec is how the AI stops guessing. You review a one-page plan of WHEN/THEN — not 500 lines of wrong code you have to unwind afterward. Edge cases get decided **before** you build, not found in QA or prod. And every task traces to a spec decision, so the agent builds against the spec instead of vibing."*
+Then run the flow, naming each artifact as it appears.
 
-## Mike runs the whole flow once (12 min)
+1. Explore. Run `/opsx:explore` on the specs already in the repo and on the story, and run `/grill-me` alongside it to surface the gaps. Nothing is saved; this is thinking time.
+2. Scaffold. Run `/opsx:new`. It creates the change but does not write the artifacts yet.
+3. Generate one artifact at a time. Run `/opsx:continue` for the proposal, then again for the spec, reviewing each. Run `/grill-me` on the proposal and on the spec to pull out the decisions they are still missing. Keep both identical to the Jira ticket; if the agent adds scope, tell it to match the ticket. Then continue to the design and the tasks.
+4. Split when needed. If a spec passes six to eight WHEN/THEN scenarios, it is two behaviors; split it before going on.
+5. Stop before building. Do not run `/opsx:ff` or `/opsx:apply` today; the goal is a design and tasks, not code.
 
-**Mike drives on a real story; everyone watches the shape.** Narrate each move and name the artifact + who owns it.
+A note for the room: today we use new and continue because that is what is installed, and because it lets us take the phases one at a time. Going forward, the one-shot command is `/opsx:propose`.
 
-**The reveal — Claude reads Jira:** *"Pull my story from Jira and summarize it."* → "I didn't paste it; Claude read it through the **MCP**."
+Close by pointing at the result: a spec became a design and a task list you could build from, and the requirements stayed faithful to Jira. The worked example page shows a finished one if it helps.
 
-Then the flow (this is what the rooms repeat):
-
-1. **Explore what's there.** `/opsx:explore` the specs already in the repo and your story. *"Thinking time — nothing's saved yet."*
-2. **Scaffold.** `/opsx:new` creates the change. *"It scaffolds; it doesn't write the artifacts yet."*
-3. **Generate one artifact at a time.** `/opsx:continue` produces the **next** artifact — proposal → spec → design → tasks — and you review each. **Keep the proposal and spec identical to the Jira ticket**; if it embellishes, say *"match the ticket exactly, don't add scope."* *"The requirements are Product's; your value-add is the design and the tasks."*
-4. **Split if too big.** If a spec passes ~6–8 WHEN/THEN scenarios, it's two behaviors — split before going on.
-5. **Stop before building.** We do **not** run `/opsx:ff` (fast-forwards everything) or `/opsx:apply` (writes code) today — the goal is **design + tasks**, not code.
-
-> **Today vs. go-forward (say it):** *"Today we use `/opsx:new` + `/opsx:continue` — that's what's installed, and it lets us break the phases out and review each. The go-forward command is `/opsx:propose`, which rolls these up."*
-
-Close: *"That's the target — a spec became a design and a task list you could build from, and we kept the requirements faithful to Jira. You'll do it on your own story in a minute."* (Want to see a finished one first? Show the **[Worked Example](worked-example.md)**.)
-
-> **Fallback:** No `/opsx:*` commands in the repo? *"Look up OpenSpec's explore/new/continue and run that workflow yourself."* No `/grill-me`? *"Interview me one question at a time before writing."*
+If a command is missing, create it by hand or ask Claude to run the explore, new, and continue workflow itself. If grill-me is not installed, ask Claude to interview you one question at a time.
 
 ## Done when
 
-- The room has seen **explore → new → continue** produce proposal → spec → **design + tasks**, named with owners
-- Everyone knows the handoff (proposal + spec faithful to Jira; design + tasks are the dev's)
-- Everyone knows their room and their story
-
-Send them to [Section 2](section-2-breakout.md).
+The room has watched explore, new, and continue produce a proposal, spec, design, and tasks. Everyone understands that the proposal and spec stay faithful to Jira and that the design and tasks are the developer's half. Everyone knows their room and has their story ready.

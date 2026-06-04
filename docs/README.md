@@ -1,38 +1,29 @@
-# OpenSpec for Devs — Spec → Design → Tasks
+# OpenSpec for Devs: Spec to Design and Tasks
 
-Welcome. This is the **developer** session. It picks up where the Product session left off: a **spec** comes to you, and you turn it into what you build from — a **design** and a **task list** — one small, full-stack increment at a time.
+This is the developer session. It picks up where the product session left off. A spec comes to you, and you turn it into the two things you build from: a design and a task list, one small full-stack increment at a time.
 
-> **Tooling:** Claude Code in **VS Code**, with the **Jira MCP** and **OpenSpec** (`/opsx:*`). Model: **Opus**.
+You work in Claude Code inside VS Code, with the Jira MCP and OpenSpec, on the Opus model.
 
-## The handoff (a potential split — WIP, out of scope)
+## The handoff (a potential split, work in progress, out of scope)
 
-Tuesday, Product learned to take a story and produce a **proposal** and **specs**. *One possible* way to divide the work is for that to be Product's job and the spec to come *to* you — but **process is out of scope for this training; that division is a potential/WIP frame, not a mandate.** Today you run the **whole** pipeline only so you can trust a spec you're handed. What we're teaching is the back half:
-
-> **In: an OpenSpec spec. Out: a design and tasks** a developer (or the agent) can build from.
+On Tuesday, product practiced taking a story and producing a proposal and specs. One way to divide the work is for that to sit with product and for the spec to come to you. The process itself is out of scope for this training, and that division is a work in progress, not a decision. Today you run the whole pipeline so you can trust a spec you are handed. What we teach is the back half: in comes a spec, and out come a design and tasks a developer or the agent can build from.
 
 ## The flow (today's commands)
 
-1. **Bring a story** (pull it from Jira).
-2. **`/opsx:explore`** — think through the specs already in the repo and your story. *Nothing is saved.*
-3. **`/opsx:new`** — scaffold the change. *(No artifacts yet.)*
-4. **`/opsx:continue`** (repeat) — generate the **next** artifact, one at a time: **proposal → spec → design → tasks.** Review each. **Keep the proposal + spec identical to the Jira ticket** — don't invent scope.
-5. **Stop before building.** No `/opsx:ff`, no `/opsx:apply` today — we want **design + tasks**, not code.
+1. Bring a story and pull it from Jira.
+2. Run `/opsx:explore` to think through the specs already in the repo and your story. Use `/grill-me` here to pressure-test it. Nothing is saved yet.
+3. Run `/opsx:new` to scaffold the change. This creates the change; it does not write the artifacts.
+4. Run `/opsx:continue` to generate the next artifact, one at a time: proposal, then spec, then design, then tasks. Run `/grill-me` again on the proposal and the spec to surface the decisions they are still missing. Keep the proposal and spec identical to the Jira ticket; do not invent scope.
+5. Stop before building. Do not run `/opsx:ff` or `/opsx:apply` today. We want a design and tasks, not code.
 
-> *Go-forward,* the simplified one-shot is **`/opsx:propose`**. Today we use `new` + `continue` so we can break the phases out and review each.
+Going forward, the simplified one-shot command is `/opsx:propose`. Today we use new and continue so we can take the phases one at a time and review each.
 
-Two rules we hold all session:
-- **Incremental.** One spec, one artifact at a time. Keep changes small (1–2 capabilities) so the agent doesn't go off the rails.
-- **Full-stack by behavior, never by page area.** A spec is a behavior a user can observe end to end (`guest-checkout`), **not** "the header" or "the payment panel."
+Two things we hold to all session. Keep changes small, one or two capabilities, so the agent does not take on too much. Split by behavior, not by area of the page: a spec is a behavior a user can observe end to end, such as guest checkout, not the header or the payment panel.
 
 ## How the session runs
 
-| | |
-|---|---|
-| **Section 1 — Orient** | All together. Level-set, then **Mike runs the whole flow once**. |
-| **Section 2 — Breakout** | **Two rooms.** You run it on your own story: spec → design + tasks. |
-| **Section 3 — Reconvene** | All together. Show one result, ask anything. |
-| **Closing** | Quick retro + rate the session. |
+Section 1 is orient, everyone together: a short level-set, then one person runs the whole flow once. Section 2 is the breakout, in two rooms: you run it on your own story. Section 3 is reconvene, everyone together: show one result and ask questions. Then a short closing retro and rating.
 
 ## Before you arrive
 
-Do the [Prerequisites](prerequisites.md): Claude in VS Code (Opus), **Jira MCP (global)**, the working repo with **OpenSpec + existing specs**, and **one real story**. Keep the **[Cheat Sheet](cheatsheet.md)** open. The method is in **[The OpenSpec Process](openspec-process.md)**.
+Do the prerequisites: Claude in VS Code on Opus, the Jira MCP connected globally, the working repo with OpenSpec and existing specs, and one real story. Keep the cheat sheet open. The method is in the OpenSpec process page.
