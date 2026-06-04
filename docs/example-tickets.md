@@ -9,8 +9,8 @@ Four real tickets, shipped with the repo, if you didn't bring a story or want a 
 | **PPA-4978** | Bug / PPA | ✏️ **Behavior-rich** — business rules + edge cases; good for practicing the split when one spec gets too big. |
 | **PUR-6336** | Task / AI data | ✏️ **"Is this one thing or many?"** — an implementation checklist; great for finding behavioral seams and splitting into smaller specs. |
 
-The full files are in this repo (`training-repo-seed/examples/`). To use one:
+The full files are in this repo (`examples/`). To use one:
 
-> *"Pull [PUR-6243] from Jira (or read `training-repo-seed/examples/PUR-6243.md`). Treat it as my story: propose it, break it into specs, then take one spec and generate the design and tasks. Keep it to one full-stack increment."*
+> *"Pull [PUR-6243] from Jira (or read `examples/PUR-6243.md`). Treat it as my story: propose it, break it into specs, then take one spec and generate the design and tasks. Keep it to one full-stack increment."*
 
 > **Splitting:** if a spec ends up with more than ~6–8 WHEN/THEN scenarios, that's two behaviors — split it into smaller specs first, then generate design + tasks for one.
